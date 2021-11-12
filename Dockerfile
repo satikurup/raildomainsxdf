@@ -4,5 +4,7 @@ EXPOSE 5000
 WORKDIR /usr/app/
 RUN pip install -r requirements.txt
 CMD app.py
-RUN apt-get update ##[edited]
-RUN apt-get install ffmpeg libsm6 libxext6 -y
+RUN apt-get update
+RUN apt install -y libgl1-mesa-glx
+
+COPY requirements.txt requirements.txt
