@@ -39,7 +39,7 @@ rad = st.sidebar.selectbox(
     " Platform ",
     ("CrowdAnalysis", "Unattended Baggage Detection","Blind person detection")
 )   
-st.write("Rail Platform Solutions")
+st.title("Rail Platform Solutions")
 if rad=="CrowdAnalysis":
    st.write("CrowdAnalysis")
    st.video("crowdd.mp4")
