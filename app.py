@@ -41,6 +41,7 @@ rad = st.sidebar.selectbox(
 )   
 
 if rad=="CrowdAnalysis":
+   st.write("CrowdAnalysis")
    st.video("crowdd.mp4")
 if rad=="Unattended Baggage Detection":
    st.video("myvide.mp4")
