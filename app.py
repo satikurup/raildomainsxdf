@@ -42,38 +42,39 @@ rad = st.sidebar.selectbox(
 st.title("Rail Platform Solutions")
 if rad=="CrowdAnalysis":
    st.write("CrowdAnalysis")
-   st.video("crowd.mp4")if st.button('Check with a live video'):
+   st.video("crowd.mp4")
+   if st.button('Check with a live video'):
         # construct the argument parse and parse the arguments
-   parser = argparse.ArgumentParser(description='Object Detection and Tracking using YOLO in OPENCV')
-   parser.add_argument('--image', help='Path to image file.')
-   parser.add_argument('--video', help='xtest.mp4')
-   parser.add_argument("-s", "--skip_frames", type=int, default=1,
-       help="# of skip frames between detections")
-   args = parser.parse_args()
+      parser = argparse.ArgumentParser(description='Object Detection and Tracking using YOLO in OPENCV')
+      parser.add_argument('--image', help='Path to image file.')
+      parser.add_argument('--video', help='xtest.mp4')
+      parser.add_argument("-s", "--skip_frames", type=int, default=1,
+         help="# of skip frames between detections")
+      args = parser.parse_args()
 
    # Process inputs
-   winName = 'Crowd Analysis using YOLO'
+      winName = 'Crowd Analysis using YOLO'
    #cv.namedWindow(winName, cv.WINDOW_NORMAL)
 
    #outputFile = "yolo_out_py.avi"
-   if (args.image):
+      if (args.image):
        # Open the image file
-       if not os.path.isfile(args.image):
-           print("Input image file ", args.image, " doesn't exist")
-           sys.exit(1)
-       cap = cv.VideoCapture(args.image)
+          if not os.path.isfile(args.image):
+              print("Input image file ", args.image, " doesn't exist")
+              sys.exit(1)
+          cap = cv.VideoCapture(args.image)
        
-   elif (args.video):
+      elif (args.video):
        # Open the video file
-       if not os.path.isfile(args.video):
-           print("Input video file ", args.video, " doesn't exist")
-           sys.exit(1)
-       cap = cv.VideoCapture(args.video)
+         if not os.path.isfile(args.video):
+             print("Input video file ", args.video, " doesn't exist")
+             sys.exit(1)
+         cap = cv.VideoCapture(args.video)
        #outputFile = args.video[:-4]+'_yolo_out_py.avi'
-   else:
+      else:
        # Webcam input
        #cap = cv.VideoCapture('./test.mp4')
-       res = cv.VideoCapture(0)
+         res = cv.VideoCapture(0)
       
    Integration.run(res,args)
 
